@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The Order - #1 online food delivery app</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+
+
+<body>
+
+
+<div class="jumbotron text-center">
+  <h1>The Order</h1>
+  <p>Under 30 min delivery and fresh cooked meals with surplous amounts of offers to choose from</p> 
+</div>
+
+<p>Click the button to get your coordinates.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition, showError);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      x.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      x.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+</script>
+
+
+<div class="container">
+<p>Restraunts :</p>
+</div>
+
+<style>
+
+</style>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    	<img src="https://b.zmtcdn.com/data/pictures/3/18388053/3d806806f2728ba207b4b2f325032a50.jpg" width="300" height="200">
+      <h2>The Best</h2>
+      <p>The Best is a family friendly vegetarian restraunt 
+      which has a large menu to chose from</p>
+    </div>
+    <div class="col-sm-4">
+    	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNLjFJVceJbSwMCAqyT90ZbvM3U8QvQIsgZw&s" width="300" height="200">
+      <h2>Fassos</h2>
+      <p>An Indian Fast food chain restraunt which offers 
+      a great amounts of wraps and Plates.</p>
+    </div>
+    <div class="col-sm-4">
+    	<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/jskj3ofhhtjizlvxlqvq" width="300" height="200">
+      <h2>Ruin House</h2>
+      <p>A Classy place.
+       </p>
+    </div>
+     <div class="col-sm-4">
+    	<img src="https://download.logo.wine/logo/KFC/KFC-Logo.wine.png" width="300" height="200">
+      <h2>KFC</h2>
+      <p>Colonel's wings near you. Order now!</p>
+    </div>
+    <div class="col-sm-4">
+    	<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6PrgQpnSP7eTrEroSncI3Joi1FN1hnMmXGw&s" width="300" height="200">
+      <h2>Domino's Pizza</h2>
+      <p>Surplus amounts of pizza, sides, beverages.</p>
+    </div>
+    <div class="col-sm-4">
+    	<img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/ae4jbmd4rd9sxvewf0jz" width="300" height="200">
+      <h2>Dumpling Momo</h2>
+      <p>A taste haven for momo lovers.</p>
+    </div>
+
+
+
+    
+     </div>
+</div>
+
+</body>
+</html>
+
+
